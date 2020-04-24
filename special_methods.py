@@ -24,6 +24,9 @@ class Employee:
     def __str__(self):
         return '{} - {}'.format(self.fullname(), self.email)
 
+    def __add__(self, other):
+        return self.pay + other.pay
+
 
 emp_1 = Employee('Aaron', 'Glenn', 100)
 emp_2 = Employee('Test', 'User', 200)
@@ -36,3 +39,5 @@ print(str(emp_1))
 
 repr(emp_1)  # repr is info on an object for devlopers
 str(emp_1)  # str is info that will be displayed for end users and stuff
+
+print(emp_1 + emp_2)
