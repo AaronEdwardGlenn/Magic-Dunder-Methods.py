@@ -19,20 +19,20 @@ class Employee:
         self.pay = int(self.pay * Employee.raise_amount)
 
     def __repr__(self):  # this is needed when we have the str that follows this. otherwise it will just default to repr. having it as pass is all that is needed
-        pass
+        return "Employee('{}', '{}', '{}')".format(self.first, self.last, self.pay)
 
     def __str__(self):
-        pass
+        return '{} - {}'.format(self.fullname(), self.email)
 
 
 emp_1 = Employee('Aaron', 'Glenn', 100)
 emp_2 = Employee('Test', 'User', 200)
 
-print(1+2)
-print('a'+'b')
-
 # this doesn't print out anything useful. our special methods are going to change this.
-print(emp_1)
+
+print(repr(emp_1))
+print(str(emp_1))
+
 
 repr(emp_1)  # repr is info on an object for devlopers
-str(emp_1)  # str is info that will be displayed for users and stuff
+str(emp_1)  # str is info that will be displayed for end users and stuff
