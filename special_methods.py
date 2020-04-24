@@ -27,6 +27,9 @@ class Employee:
     def __add__(self, other):
         return self.pay + other.pay
 
+    def __len__(self):
+        return len(self.fullname())
+
 
 emp_1 = Employee('Aaron', 'Glenn', 100)
 emp_2 = Employee('Test', 'User', 200)
@@ -41,3 +44,9 @@ repr(emp_1)  # repr is info on an object for devlopers
 str(emp_1)  # str is info that will be displayed for end users and stuff
 
 print(emp_1 + emp_2)
+
+# NOTE review python docs to see math dunders
+
+print('test'.__len__())
+
+print(len(emp_1))
